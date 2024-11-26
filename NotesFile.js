@@ -1,3 +1,6 @@
+// ******** SVELTE SPECIFIC NOTES ********
+
+
 // goto function: svelte function to quickly post new page by just getting new page data and place on current page rather than reloading entire page
 
 // '/**/' : double asterick in file globbing means to find matches at any depth
@@ -27,33 +30,6 @@
 
 // TIP: framework specific files '.svelte' are called COMPONENTS (self-contained unit)
 
-// Tailwind CSS initialization Steps:
-    // 1. install tailwindcss, postcss, and autoprefixer
-    // 2. Verify/create tailwind.config.js file in root and ensure content property is configrued
-        content: [
-            './src/**/*.{html,js,svelte,ts}', // Ensures Tailwind scans all relevant files
-        ],
-    // 3. Verify/create postcss.config.js file in root
-        module.exports = {
-            plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-            },
-        };
-    // 4. Include tailwind directives in app.css file (create if not there) in src/
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-        // a. ensure this file is imported in src/routes/+layout.svelte
-            <script>
-            import '../app.css';
-            </script>
-        
-            <slot />
-      
-// Modules: self-contained code that can be imported/exported and reused; e.g. .cpp and .h files act as modules when compiled together
-
-
 // CommonJS vs ES Modules
     // CommonJS (CJS): Uses module.exports and require; older Node.js module system
         // e.g. File: math.js,
@@ -74,6 +50,16 @@
 
     //TIP: module system is JS fancy wording for import/export system for files (modules)
 
+
+
+
+
+
+    
+
+// ***** GENERAL WEB DEV NOTES *******
+
+
 // Web Dev Logic: 
     // 1. Start by Asking: What does this page need to do?
         // How do I abstract that into logic (using JavaScript classes)?
@@ -92,3 +78,32 @@
             
 
     // 4. Add Representations: Use the same logic to output code or explanations alongside the visuals.    
+
+
+    
+// Tailwind CSS initialization Steps:
+    // 1. install tailwindcss, postcss, and autoprefixer
+    // 2. Verify/create tailwind.config.js file in root and ensure content property is configrued
+    content: [
+        './src/**/*.{html,js,svelte,ts}', // Ensures Tailwind scans all relevant files
+    ],
+// 3. Verify/create postcss.config.js file in root
+    module.exports = {
+        plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+        },
+    };
+// 4. Include tailwind directives in app.css file (create if not there) in src/
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    // a. ensure this file is imported in src/routes/+layout.svelte
+        <script>
+        import '../app.css';
+        </script>
+    
+        <slot />
+  
+// Modules: self-contained code that can be imported/exported and reused; e.g. .cpp and .h files act as modules when compiled together
+
