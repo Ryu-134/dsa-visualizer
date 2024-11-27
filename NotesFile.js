@@ -136,9 +136,20 @@
 
 // In JS anything that in not <header> or <footer> is generally considered <main>
 
-// Set fallback fonts
+// In JS double quotes and single quotes are string literals 
 
+// JS string quotes:
+    // Single Quotes ( ' ): For simple strings without interpolation and no need for escaping single quotes inside.
+    // Double Quotes ( " )	: For strings that contain single quotes or match conventions (e.g., JSON requires double quotes).
+    // Template Literals ( ` )	: For strings that need interpolation, multiline formatting, or embedded expressions with ${}.
+    // NOTE: interpolation = placing vairables or expression in strings
 
+// Test Breakpoints
+    // Breakpoints: These are screen widths where you change styles for different devices. 
+    // To test your responsive design:
+        // Open your browser’s Developer Tools.
+        // Switch to Responsive Mode (usually an icon with a phone/tablet).
+        // Adjust the screen width to see how your styles look at different breakpoints (mobile, tablet, desktop).
 
 // Graphic Types:
     // Vector graphics: use points, lines, and shapes to represent images; i.e. shapes to create graphics

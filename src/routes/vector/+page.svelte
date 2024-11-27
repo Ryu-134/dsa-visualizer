@@ -2,50 +2,55 @@
 <!-- JS to mimic vector logic to connect JS to visuals -->
 <script lang="ts">        
     let vector: string[] = [];
-    let capacity = 4;
+    let capacity = 3;
     let size = 0;
     let inputValue = '';
-
     // C++ code representation
     let cppCode: string = "#include <vector>\nvector<int> vector";
 
     function addElements() {
         if (!inputValue) return;    // check for empty input 
-
+        if (size === 12) {      // if vector hits 12 elements reset state variables
+            capacity = 3;
+            size = 0;
+            vector = [];
+            inputValue = '';
+            cppCode = "#include <vector>\nvector<int> vector";
+            return;
+        }    
         if (size === capacity) {    //double capacity if vector is full
             capacity *= 2;
         }
-
         vector = [...vector, inputValue];   // append new element to vector using spread (...) 
-        cppCode += "\nvec.push_back(${inputValue});";   // show operation in C++ code representation
+        cppCode += `\nvec.push_back(${inputValue});`;   // show operation in C++ code representation
         size++;     
-        inputValue = '';    // clear input field 
     }
 </script>
+
 
 <!-- Page Layout: Contain visuals of vector, representative C++ code, user controls -->
 
 <!-- User Input: -->
-<div class="mb-4 flex">
+<div>
     <!-- bind:value connects user input to inputValue variable -->
     <input 
         type="text" 
         placeholder="Enter Value" 
         bind:value={inputValue} 
-        class="border border-gray-300 rounded py-2 px-4 mr-2 text-lg"
     />     
     <button 
         on:click={addElements}
-        class="bg-blue-500 text-white py-2"
+        class="btn-input"
     >
         Add Element
     </button>
 </div>
 
 <!-- Visualization -->
-<div class="flex-justify-between">
+
+<div class="flex w-full">
     <!-- Vector visual representation -->
-    <div class="w-1/2">
+    <div class="w-1/2 flex flex-col items-center justify-center">
         <!-- Rectangle for each slot; x: horiz. pstn of of slot; fill: color rect. if its filled or not -->
         <svg class="border border-black" width="500" height="150" >
             <!-- for each possible array index draw rectangle -->
@@ -70,12 +75,14 @@
                 </text>
             {/each}
         </svg>
-        <p class="mt-2" >
-            <p>Capacity: {capacity}</p>
-            <p>Size: {size}</p>
+        <div class="flex space-x-10 text-center justify-center">
+            <h4>Capacity: {capacity} </h4>
+            <h4> Size: {size}</h4>
+        </div>
+        
     </div>
     <!-- C++ code representation visuals -->
-    <div class="p-4 rounded">
+    <div class="w-1/2 flex items-center justify-center">
         <pre><code>{cppCode}</code></pre>
     </div>
 </div>

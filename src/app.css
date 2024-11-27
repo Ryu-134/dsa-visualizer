@@ -17,27 +17,42 @@
     --burnt-sienna: #e76f51ff;
 }
 
-/* General Backgrounds and Typography */
+/* Default values for backgrounds and typography  */
 body {
-    @apply bg-charcoal text-saffron font-sans;
+    @apply min-h-screen bg-charcoal text-saffron font-sans;
     margin: 0;
     padding: 0;
+    display: grid;
+}
+
+/* Main content */
+main {
+    @apply grid place-items-center text-center h-full p-8;
 }
 
 /* Headings */
 h1 {
-    @apply text-4xl font-bold text-saffron;
+    @apply text-8xl font-black text-saffron m-3;
 }
 h2 {
-    @apply text-3xl font-semibold text-sandy-brown;
+    @apply text-4xl font-bold text-sandy-brown m-3;
 }
 h3 {
-    @apply text-2xl font-medium text-burnt-sienna;
+    @apply text-2xl font-semibold text-burnt-sienna m-3;
+}
+h4 {
+    @apply text-xl font-medium text-saffron m-3;
+}
+h5 {
+    @apply text-lg font-normal text-sandy-brown m-3;
+}
+h6 {
+    @apply text-base font-light text-burnt-sienna m-3;
 }
 
 /* Paragraphs and Text */
 p {
-    @apply text-base text-saffron;
+    @apply text-base text-saffron text-lg;
     line-height: 1.6;
 }
 
@@ -48,22 +63,36 @@ a {
 
 /* Buttons */
 button {
-    @apply bg-persian-green text-white py-2 px-4 rounded;
+    @apply bg-persian-green text-saffron text-xl px-5 py-3 m-3 rounded;
 }
+    button:hover {
+        @apply bg-burnt-sienna text-charcoal;
+    }
 
-button:hover {
-    @apply bg-sandy-brown text-charcoal;
+    .btn-input {
+        @apply px-4 py-2;
+    }
+
+/* Inputs */
+input {
+    @apply border border-saffron bg-persian-green text-saffron text-xl text-center px-4 py-2 m-3 rounded;
 }
+    input:focus {
+        @apply outline-none border-burnt-sienna ring-2 ring-burnt-sienna;
+    }
+    input::placeholder {
+        @apply text-saffron text-xl text-center
+    }
+
 
 /* Code Blocks */
 code {
-    @apply bg-persian-green text-burnt-sienna p-2 rounded;
+    @apply bg-persian-green text-burnt-sienna text-lg p-2 rounded;
     display: block;
     width: 100%;
     box-sizing: border-box;
     white-space: pre;
     font-family: "Courier New", Courier, monospace;
-    font-size: 1rem;
     line-height: 1.5;
     overflow-x: auto;
 }
@@ -72,20 +101,12 @@ pre {
     @apply bg-charcoal text-saffron p-4 rounded overflow-x-auto;
 }
 
-/* Inputs */
-input {
-    @apply border border-sandy-brown rounded py-2 px-4 text-charcoal;
-}
-
-input:focus {
-    @apply outline-none border-persian-green ring-2 ring-persian-green;
-}
 
 /* Headers and Footers */
 header {
-    @apply bg-persian-green text-white p-6 text-center;
+    @apply bg-persian-green text-saffron fixed top-0 p-2 w-full text-center;
 }
 
 footer {
-    @apply bg-charcoal text-saffron text-center p-4;
+    @apply bg-persian-green text-saffron fixed bottom-0 p-1 w-full text-center;
 }

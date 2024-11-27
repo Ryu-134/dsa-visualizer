@@ -3,16 +3,14 @@
 </script>
 
 
-<div class="flex items-center justify-center h-screen p-5">
-    <div class= "text-center">
-        <h1 class="text-8xl font-extrabold font-mono p-4">DSA Visualizer</h1>
-        <h2 class="text-2xl font-normal font-mono">Select a DSA to visualize:</h2>
+<div>
+    <h1>DSA Visualizer</h1>
+    <h2>Select a DSA:</h2>
 
-        <ul class="mt-5">
-            <div class="inline-block mx-2">
-            <li><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800" on:click={() => goto('/vector')}>Vector</button></li>
-        </ul>
-    </div>
+    <ul class="mt-5">
+        <div class="inline-block mx-2">
+        <li><button on:click={() => goto('/vector')}>Vector</button></li>
+    </ul>
 </div>
 
 
