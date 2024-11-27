@@ -10,6 +10,7 @@
 
 //Best Practice: use CSS by defining classes (in my CSS or Tailwind) and placing them within HTML tags
     // otherwise can directly define CSS in HTML tags OR in <style> tag in document
+    // TIP: Tailwind CSS has 99% of most design elements you'll use so just use that
 
 //padding: empty space between element and its border in  CSS
 
@@ -50,9 +51,28 @@
 
     //TIP: module system is JS fancy wording for import/export system for files (modules)
 
+// use bind:value for live updates on user input
 
+// place color palette styles into +layout.svelte file to create layout (footer, header, persistent UI like menu)
+    //add news colors in app.css (to create global style for tags) and reference them (or just bring in directly) in tailwind.config.js extend, to use in TailwindCSS
+    //When to use:
+        // Use app.css for Consistent Styling Across Tags:
+            // Benefit: Global styling works even if you introduce new layouts or components.
+            // NOTE: to incorporate tailwind utilities into CSS use '@apply' keyword
 
+        // Use layout.svelte for Reusable Structure:
+            // Define a persistent header, footer, or UI element that never changes
 
+        // Work Together for Global and Layout Styling:
+            // Use app.css for default tag styles.
+            // Use layout.svelte to add styles specific to the layout structure.
+
+// A five-color palette offers flexibility:
+    // Background - Neutral Color
+    // Primary - Main branding or dominant color.
+    // Secondary - Support the primary or create variation.
+    // Tertiary - Accent colors for highlights or small details.
+    // Accent - sparingly use; to really highlight something 
 
 
     
@@ -71,15 +91,20 @@
             // otherwise keep all in +page.svelte; web pages are often unique
                 // BUT reusability is seen at component level (src/components); look at the UI 
 
-    // 3. Tie Logic to Visuals: Map the internal state of your class to dynamic visuals on the page.
+    // 3. TIE Logic to Visuals: Map the internal state of your class to dynamic visuals on the page.
         // BEST PRACTICE: keep visual logic (HTML + CSS) and page logic (JavaScript) separate 
             // NOTE: does not mean separate files just separte sections in +page.svelte 
             // TIP: you will never separate HTML + CSS; they are symbiotic; only define global CSS style at most
             
-
     // 4. Add Representations: Use the same logic to output code or explanations alongside the visuals.    
 
+// '...' : this is spread operator in JS
+    // adheres to immutability (NO changing data in place) necessary in funcitonal programming as it creates a new variable
+    // in svelte we need to re-assign it to ensure its reacted too as in place mutations (like push(), pop()) dont create a new reference
+    // Ex:
+        vector = [...vector, inputValue];   // spreads array 'vector' into a new array called 'vector' with appending inputValue
 
+// Think use <div> block whenver you want encapsulation
     
 // Tailwind CSS initialization Steps:
     // 1. install tailwindcss, postcss, and autoprefixer
@@ -107,3 +132,37 @@
   
 // Modules: self-contained code that can be imported/exported and reused; e.g. .cpp and .h files act as modules when compiled together
 
+// margin: space outside elements, affecting how far element is from other elements & parent container
+
+// In JS anything that in not <header> or <footer> is generally considered <main>
+
+// Set fallback fonts
+
+
+
+// Graphic Types:
+    // Vector graphics: use points, lines, and shapes to represent images; i.e. shapes to create graphics
+        // graphics created mathematically so do not become blurry\
+        // NOTE: SVG canvas is always origin of (0, 0) = top-left corder of SVG element, defined in <svg> tag position
+    // raster graphics (e.g. JPGs, PNGs): are made of tiny dots called pixels; becomes blurry if resized improperly
+        
+
+// Compact Syntax: Inline Functions or Bindings
+    // For inline/single-line operations, such as event handlers, function calls, or binding properties use compact syntax
+    // JS Ex:
+        // Event Handlers:
+            <button on:click={addElements}>Add Element</button> <!-- Compact and clear -->
+        // Property Bindings:
+            <input bind:value={inputValue} />
+    // C++ Ex:
+        //1.
+            if (isEven(number)) std::cout << "Number is even." << std::endl;
+        //2. 
+            int a = 5;
+            std::vector<int> vec = {1, 2, 3};
+
+// CSS Flexbox & Grid
+    // Flexbox is great for one-dimensional layouts (rows or columns) and aligning items.
+    // Grid is ideal for more complex, two-dimensional layouts.
+    // use Flexbox for smaller layout adjustments inside components and Grid for larger, overarching page layouts.
+    // Tailwind CSS simplifies both systems with utility classes like flex, grid, justify-center, and gap.

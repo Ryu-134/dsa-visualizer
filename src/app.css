@@ -1,3 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global CSS Variables:
+    Background: charcoal
+    Primary Color: Persian-Green
+    Secondary Color: Saffron
+    Tertiary Color: Burnt-Sienna
+    Accent: Sandy-Brown */
+
+:root {
+    --charcoal: #264653ff;
+    --persian-green: #2a9d8fff;
+    --saffron: #e9c46aff;
+    --sandy-brown: #f4a261ff;
+    --burnt-sienna: #e76f51ff;
+}
+
+/* General Backgrounds and Typography */
+body {
+    @apply bg-charcoal text-saffron font-sans;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1 {
+    @apply text-4xl font-bold text-saffron;
+}
+h2 {
+    @apply text-3xl font-semibold text-sandy-brown;
+}
+h3 {
+    @apply text-2xl font-medium text-burnt-sienna;
+}
+
+/* Paragraphs and Text */
+p {
+    @apply text-base text-saffron;
+    line-height: 1.6;
+}
+
+a {
+    @apply text-persian-green hover:underline;
+    text-decoration: none;
+}
+
+/* Buttons */
+button {
+    @apply bg-persian-green text-white py-2 px-4 rounded;
+}
+
+button:hover {
+    @apply bg-sandy-brown text-charcoal;
+}
+
+/* Code Blocks */
+code {
+    @apply bg-persian-green text-burnt-sienna p-2 rounded;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: pre;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+pre {
+    @apply bg-charcoal text-saffron p-4 rounded overflow-x-auto;
+}
+
+/* Inputs */
+input {
+    @apply border border-sandy-brown rounded py-2 px-4 text-charcoal;
+}
+
+input:focus {
+    @apply outline-none border-persian-green ring-2 ring-persian-green;
+}
+
+/* Headers and Footers */
+header {
+    @apply bg-persian-green text-white p-6 text-center;
+}
+
+footer {
+    @apply bg-charcoal text-saffron text-center p-4;
+}
