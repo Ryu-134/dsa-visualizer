@@ -1,25 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
-/* Global CSS Variables:
+/* Global CSS Styling:
     Background: charcoal
+    Text: Sandy-Brown
     Primary Color: Persian-Green
     Secondary Color: Saffron
-    Tertiary Color: Burnt-Sienna
-    Accent: Sandy-Brown */
+    Accent: Burnt-Sienna 
+    NOTE: saffron is best inside Persian Green
+*/
 
-:root {
-    --charcoal: #264653ff;
-    --persian-green: #2a9d8fff;
-    --saffron: #e9c46aff;
-    --sandy-brown: #f4a261ff;
-    --burnt-sienna: #e76f51ff;
-}
 
 /* Default values for backgrounds and typography  */
 body {
-    @apply min-h-screen bg-charcoal text-saffron font-sans;
+    @apply min-h-screen bg-charcoal text-sandy-brown font-sans;
     margin: 0;
     padding: 0;
     display: grid;
@@ -30,15 +26,19 @@ main {
     @apply grid place-items-center text-center h-full p-8;
 }
 
+div {
+    animation: slit-in-vertical 0.45s ease-out 0s 1 normal both;
+}
+
 /* Headings */
 h1 {
-    @apply text-8xl font-black text-saffron m-3;
+    @apply text-8xl font-black text-sandy-brown m-3;
 }
 h2 {
-    @apply text-4xl font-bold text-sandy-brown m-3;
+    @apply text-4xl font-bold text-saffron m-3;
 }
 h3 {
-    @apply text-2xl font-semibold text-burnt-sienna m-3;
+    @apply text-2xl font-semibold text-sandy-brown m-3;
 }
 h4 {
     @apply text-xl font-medium text-saffron m-3;
@@ -47,12 +47,12 @@ h5 {
     @apply text-lg font-normal text-sandy-brown m-3;
 }
 h6 {
-    @apply text-base font-light text-burnt-sienna m-3;
+    @apply text-base font-light text-saffron m-3;
 }
 
 /* Paragraphs and Text */
 p {
-    @apply text-base text-saffron text-lg;
+    @apply text-base text-sandy-brown text-lg;
     line-height: 1.6;
 }
 
@@ -63,31 +63,29 @@ a {
 
 /* Buttons */
 button {
-    @apply bg-persian-green text-saffron text-xl px-5 py-3 m-3 rounded;
+    @apply bg-persian-green text-white text-xl font-bold px-4 py-2 m-3 rounded;
 }
     button:hover {
-        @apply bg-burnt-sienna text-charcoal;
+        @apply bg-burnt-sienna text-charcoal font-black;
     }
-
     .btn-input {
-        @apply px-4 py-2;
+        @apply px-4 py-2 m-3 font-bold ;
     }
 
 /* Inputs */
 input {
-    @apply border border-saffron bg-persian-green text-saffron text-xl text-center px-4 py-2 m-3 rounded;
+    @apply border border-saffron bg-persian-green text-white text-xl text-center px-4 py-2 m-3 rounded;
 }
     input:focus {
         @apply outline-none border-burnt-sienna ring-2 ring-burnt-sienna;
     }
     input::placeholder {
-        @apply text-saffron text-xl text-center
+        @apply text-white text-xl text-center;
     }
-
-
+    
 /* Code Blocks */
 code {
-    @apply bg-persian-green text-burnt-sienna text-lg p-2 rounded;
+    @apply bg-persian-green text-saffron text-2xl p-2 rounded;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -98,15 +96,136 @@ code {
 }
 
 pre {
-    @apply bg-charcoal text-saffron p-4 rounded overflow-x-auto;
+    @apply bg-charcoal text-sandy-brown p-2 rounded overflow-x-auto;
 }
-
 
 /* Headers and Footers */
 header {
-    @apply bg-persian-green text-saffron fixed top-0 p-2 w-full text-center;
+    @apply text-sandy-brown fixed top-0 left-0 p-1 text-center w-auto bg-charcoal rounded;
 }
+    header .menubar-trigger {
+        @apply hover:text-persian-green cursor-pointer px-2 py-2;
+    }
+    header .menubar-content {
+        @apply bg-charcoal text-sandy-brown shadow-lg rounded-lg;
+    }
+    header .menubar-item {
+        @apply hover:bg-persian-green hover:text-saffron px-4 py-2;
+    }
+    header .menubar-separator {
+        @apply bg-saffron h-[1px] w-full my-1;
+    }
+    header .menubar-shortcut {
+        @apply text-burnt-sienna text-sm ml-auto;
+    }
 
 footer {
-    @apply bg-persian-green text-saffron fixed bottom-0 p-1 w-full text-center;
+    @apply text-saffron fixed bottom-0 p-1 w-full text-center;
+    font-size: 0.8rem;
+}
+
+/* Background */
+.gradient-bg {
+    background: rgb(38,70,83);
+    background: linear-gradient(to right top, #264653, #225b68, #1c7079, #1b8786);    /* Removed color gradient: #2a9d8f);*/
+    min-height: 100vh; /* Ensure it covers the full viewport */
+    min-width: 100vw; /* Ensure it covers the full viewport */
+    background-attachment: fixed; /* Optional for a fixed parallax effect */
+  }
+
+/* Animations */
+/* Temporarily disable during dev for better build */
+/* @keyframes slit-in-vertical {
+    0% {
+      transform: translateZ(-800px) rotateY(90deg);
+      opacity: 0;
+    }
+    54% {
+      transform: translateZ(-160px) rotateY(87deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateZ(0) rotateY(0);
+    }
+  }
+ */
+
+
+
+/* ShadCn  */
+@layer base {
+  :root {
+    /* My custom colors */
+    --background: #264653; /* Charcoal */
+    --card: #264653; /* Charcoal for dropdown menus */
+    --popover: #264653; /* Charcoal for any popovers */
+    --foreground: #f4a261; /* Sandy-Brown for text */
+
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --card-foreground: 240 10% 3.9%;
+ 
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+ 
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+ 
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+ 
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --ring: 240 10% 3.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --ring: 240 4.9% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

@@ -67,6 +67,10 @@
             // Use app.css for default tag styles.
             // Use layout.svelte to add styles specific to the layout structure.
 
+// CSS Organization
+    // global styles: app.css
+    // component specific: style in <style> block within the file
+
 // A five-color palette offers flexibility:
     // Background - Neutral Color
     // Primary - Main branding or dominant color.
@@ -136,7 +140,20 @@
 
 // In JS anything that in not <header> or <footer> is generally considered <main>
 
+// WARNING: in tailwindcss styles DO NOT CASCADE like regular CSS
+    // even global styles in app.css; some in '@apply' can cascade like font-color BUT background-color and more do not
+        // only what could cascade in standard CSS cascades
+            // TIP: most inheritable CSS is related to typography; i.e. manipulating text
+
 // In JS double quotes and single quotes are string literals 
+
+// ARIA (Accessible Rich Internet Applications) Roles:
+    // def: attributes in HTML to improve accesiblity
+        // give non-semantic elements (e.g. <div> or <span>) specific purpose or meaning
+
+// CSS vs JS Animations:
+    // Use CSS for lightweight, simple animations (hover effects, transitions).
+    // Use JS for complex animations (scroll-based effects, physics-based movement). 
 
 // JS string quotes:
     // Single Quotes ( ' ): For simple strings without interpolation and no need for escaping single quotes inside.
@@ -174,6 +191,7 @@
 
 // CSS Flexbox & Grid
     // Flexbox is great for one-dimensional layouts (rows or columns) and aligning items.
+        // TIP: flex default is flex-row so just 'flex' -> flex-row
     // Grid is ideal for more complex, two-dimensional layouts.
     // use Flexbox for smaller layout adjustments inside components and Grid for larger, overarching page layouts.
     // Tailwind CSS simplifies both systems with utility classes like flex, grid, justify-center, and gap.
