@@ -195,3 +195,76 @@
     // Grid is ideal for more complex, two-dimensional layouts.
     // use Flexbox for smaller layout adjustments inside components and Grid for larger, overarching page layouts.
     // Tailwind CSS simplifies both systems with utility classes like flex, grid, justify-center, and gap.
+
+
+// Website Design Guide:
+        // 1. User Flow: map out from page landing to end goal        
+            // KEY: As intuitive and apparent as possible
+
+        // 2. Wireframing: look at inspirations & design each page of user flow quick (using tools like Figma); put placeholders: link, img, body, etc
+        // 3. STEP AWAY: before commiting breathe and reasses; don't fall to bias
+
+        // 4. Design System: establish reusable, colors, fonts, icons/images, spacing, UI(e.g. buttons, inputs, forms, cards), etc. (generally these are main)
+            // a. Colors: 5 main colors for background, text, primary, secondary, accent (maybe additional to indicate success/error)
+                // NOTE: different shades of each color can be used for nuanced use (e.g. a filled out input box)
+                // TIP: accent color is only for most important element(s)
+                // TIP: use subtle gradients to standard color for flair; e.g. black card -> black~dark gray card
+
+            // b. Fonts: 3 main sizes for title (32px, bold), body (18px, regular/bold), small (14px, regular)
+            // c. Icons/Images: use Icon/Image libraries
+            // d. Spacing: use standard of; 4, 8, 12, 16, 20, 28, 40, 60, 100, 160, 240 (Incremenets for from linear to exponential at halfway point)
+                // spacing is to indicate 'relativity'; how related elements are
+
+            // e. UI Components: look at UI design inspiration -> use UI libraries 
+
+        // 5. 7 Core Design Principles:
+            // a. Visual Hierarchy: to show order of importance of element; use size, weight, color
+                // WARNING: start small often little change gives clear indication
+                // TIP: every page is a ROW; each ROW is separate idea and background color/image must be separate for contrast
+                    // NOTE: you can have multiple rows with same background but IDEA must be the same then
+                    // NOTE: have top & bottom text padding for each row to keep uniform
+
+            // b. Contrast: for readability; for colors mainly but ALSO,
+                // depth (outer border shadows): closer is more important; shadows (inner shadows): over less important items
+
+            // c. Balance: clean spacing and formatting (e.g. align left text; centering elemnts)
+
+            // d. Consistency: for harmony (e.g. same font and color theme)
+                // NOTE: Law of Similarity & Proximity -> similar CSS and group related elements and space grouped elements relative to each groups similarity 
+                // TIP: use REM values for global fonts, spacing, etc; possibly assign variables to speceify what each type is for
+                // TIP: line height to automate spacing
+
+            // e. Simplcity: "Good design is as little design as possible"; build on essentials; depth > breadth; images > text
+            // f. Feedback: for any user input to keep user engaged
+
+            // g. Top-Down: design from website core function -> build out page -> fine-tune the page
+                // NOTE: people SCAN; look at the whole page and break down each element; build out rough page first then fine-tune spacing, etc.
+
+
+// CSS Layout Guide:
+    // KEY: think in boxes; box-model
+        // CSS flexbox hierarchy: content -> padding -> border -> margin
+    // Build Outside In & Left to Right: <div> naturally stacks on top of each other; every element has parent child relationship
+
+    // Tool to Use: FLEXBOX ( w/ Grid)
+        // flexbox makes website responise and limits media queries for screen changes
+            // TIP: for small enough screens just disable flexbox and it fits 
+
+        // absolute positioning isnt as distributable; also tedious to code pixel perfect
+        // elements are relative to each other so removing elements doesnt leave massive gap like absolute positioning
+
+    // Main Flexbox Properties: 
+        // a. display: choose type between flex and grid
+        // b. justify-content: align horizontally 
+        // c. align-items: align vertically
+        // TIP: use flex box cheat sheet website
+
+    // When using Grid: 
+        // break smallest element into multiple rows and columns; smallest dividable units; UNLESS website elements are perfectly uniform
+            // e.g. a small element may be 2 rows 2 columns and bigger element is 3 rows 4 column
+        // BUT if elements span different vertical elements; use gridTemplateAreas
+
+    // LAST RESORT: Absolute + Relative Layout; use as last resort when website requires unconventional positioning on page
+        // use relative parent position and absolute child position
+
+
