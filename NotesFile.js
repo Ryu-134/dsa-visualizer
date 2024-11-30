@@ -67,6 +67,21 @@
             // Use app.css for default tag styles.
             // Use layout.svelte to add styles specific to the layout structure.
 
+// BEST PRACTICE: define colors in app.css and create tokens in tailwind.config to those colors so they can be used in tailwind
+    // e.g. 
+        // 1. in app.css: 
+            :root {
+                --background: #264653; 
+            }
+        // 2. in tailwind.config.js:
+            extend: {
+                colors: {
+                    background: 'hsl(var(--background))', // Use --background token
+                }
+            }
+        // 3. Access via tailwind in HTML/componenets:
+            <div class="bg-background">
+
 // CSS Organization
     // global styles: app.css
     // component specific: style in <style> block within the file
@@ -267,4 +282,8 @@
     // LAST RESORT: Absolute + Relative Layout; use as last resort when website requires unconventional positioning on page
         // use relative parent position and absolute child position
 
-
+// HSL vs Hex Colors:
+    // HSL = More control over your colors.
+        // 3 values to tweak directly in code: color (hue), intensity (saturation), and brightness (lightness)
+            // NOTE: theres a fourth optional value if needed called Alphavalue (transparency); HSLA
+    // Easier for light/dark themes conversion

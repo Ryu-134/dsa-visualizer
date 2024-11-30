@@ -15,11 +15,12 @@ const config = {
 		},
 		extend: {
 			colors: {
-				'charcoal': '#264653ff', 
-				'persian-green': '#2a9d8fff', 
-				'saffron': '#e9c46aff',
-				'sandy-brown': '#f4a261ff',
-				'burnt-sienna': '#e76f51ff',
+				// My Color Pallete
+				'charcoal': '#264653ff',		// Background
+				'sandy-brown': '#f4a261ff',		// Text
+				'persian-green': '#2a9d8fff', 	// Primary
+				'saffron': '#e9c46aff',			// Secondary
+				'burnt-sienna': '#e76f51ff',	// Accent Color
 				
 				// Shadcn Colors		
 				border: "hsl(var(--border) / <alpha-value>)",
