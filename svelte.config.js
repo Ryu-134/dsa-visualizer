@@ -15,7 +15,7 @@ const config = {
             // Options for adapter-static
             pages: 'build',  // Output directory for GitHub Pages
             assets: 'build', // Directory for assets
-            fallback: 'index.html'   // 'index.html' if you need single-page app behavior
+            fallback: '404.html'   // 'index.html' if you need single-page app behavior
 		}),
 		paths: {
 			base: '/dsa-visualizer',	// set this if deploying to subdirectory
