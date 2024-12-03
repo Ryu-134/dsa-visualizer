@@ -70,7 +70,7 @@
 
         <!-- C++ code representation visuals -->
         <div class="w-[40%] flex flex-col items-center justify-center gap-12">
-            <h2 class="text-sandy-brown">Representative Code:</h2>
+            <h2 class="text-sandy-brown">C++ Code:</h2>
 
             <pre><code>{cppCode}</code></pre>
         </div>

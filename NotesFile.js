@@ -113,6 +113,9 @@
             // component specific: style within component file; NOT app.css
                 // BEST PRACTICE: also place component layout style in main component file
 
+// TIP: place layout of base/global UI component in components index file/ root component file
+
+
 // A five-color palette offers flexibility:
     // Background - Neutral Color
     // Primary - Main branding or dominant color.

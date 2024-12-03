@@ -1,6 +1,8 @@
 <script lang="ts">
     import { Menubar as MenubarPrimitive } from "bits-ui";
     import { cn } from "$lib/utils.js";
+    import { goto } from '$app/navigation'; 
+
 
     type $$Props = MenubarPrimitive.Props;
 
@@ -19,21 +21,25 @@
     class={cn("bg-background flex h-11 m-0 rounded-md border-charcoal", className)}
     {...$$restProps}
 >
-
-	<!-- Menuvar layout structure -->
+	<!-- Menubar layout structure, maybe move to layout.svelte later?  -->
     <MenubarPrimitive.Menu>
-        <MenubarTrigger>Home</MenubarTrigger>
+        <MenubarTrigger on:click={() => goto('/')}>Home</MenubarTrigger>
+    </MenubarPrimitive.Menu>
+
+    <MenubarPrimitive.Menu>
 		<MenubarTrigger>Data Structure</MenubarTrigger>
 			<MenubarContent>
-				<MenubarItem>New Tab</MenubarItem>
-					<MenubarSeparator />
-					<MenubarItem>Print</MenubarItem>
+				<MenubarItem on:click={() => goto('/vector')}>Vector</MenubarItem>
+                    <MenubarSeparator />
 			</MenubarContent>
+        </MenubarPrimitive.Menu>
+        
+    <MenubarPrimitive.Menu>
         <MenubarTrigger>Algorithms</MenubarTrigger>
 			<MenubarContent>
-				<MenubarItem>Undo</MenubarItem>
+				<MenubarItem>n/a</MenubarItem>
 					<MenubarSeparator />
-					<MenubarItem>Cut</MenubarItem>
+                <MenubarItem>n/a</MenubarItem>
 			</MenubarContent>
     </MenubarPrimitive.Menu>
 </MenubarPrimitive.Root>
