@@ -75,23 +75,6 @@ Goal: to create a web-based application that visualizes the internal workings of
 
 ---
 
-## Future Enhancements Priority:
-
-1. Fix footer text.
-2. Convert the entire application to use a Flexbox grid system with media queries for smaller screens.
-3. Add more basic DSAs.
-4. Add a dropdown menu in the main menu.
-5. Introduce a quick-select sidebar once enough DSA routes exist.
-6. Add an "About" section.
-7. Expand operations per DSA.
-8. Provide varying implementations of each DSA (e.g., singly or doubly linked lists).
-9. Implement a search bar for specific implementations.
-10. Test mobile responsiveness thoroughly using Tailwind CSS.
-11. Add animations via GSAP or Svelte.
-12. Enhance visuals and consider adding animated backgrounds.
-
----
-
 ## Notes
 
 This document serves as a guide for project development, tracking the core features and future improvements of the DSA Visualizer.
