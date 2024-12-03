@@ -1,40 +1,15 @@
 <script>
     import '../app.css';    // import global styles
-    import * as Menubar from "$lib/components/ui/menubar"; // Import Menubar component
+    import Menubar from "$lib/components/ui/menubar/menubar.svelte"; // Import Menubar
 </script>
   
 <!-- General page layout -->
-<div class="gradient-bg">
+<div class="gradient-bg min-h-screen flex flex-col items-center justify-center">
 
     <!-- Header -->
     <header>
-        <Menubar.Root>
-            <!-- File Menu -->
-            <Menubar.Menu>
-                <Menubar.Trigger class="menubar-trigger">File</Menubar.Trigger>
-                <Menubar.Content class="menubar-content">
-                    <Menubar.Item class="menubar-item">
-                        New Tab <Menubar.Shortcut class="menubar-shortcut">⌘T</Menubar.Shortcut>
-                    </Menubar.Item>
-                    <Menubar.Item class="menubar-item">New Window</Menubar.Item>
-                    <Menubar.Separator class="menubar-separator" />
-                    <Menubar.Item class="menubar-item">Print</Menubar.Item>
-                </Menubar.Content>
-            </Menubar.Menu>
-    
-            <!-- Edit Menu -->
-            <Menubar.Menu>
-                <Menubar.Trigger class="menubar-trigger">Edit</Menubar.Trigger>
-                <Menubar.Content class="menubar-content">
-                    <Menubar.Item class="menubar-item">Undo</Menubar.Item>
-                    <Menubar.Item class="menubar-item">Redo</Menubar.Item>
-                    <Menubar.Separator class="menubar-separator" />
-                    <Menubar.Item class="menubar-item">Cut</Menubar.Item>
-                    <Menubar.Item class="menubar-item">Copy</Menubar.Item>
-                    <Menubar.Item class="menubar-item">Paste</Menubar.Item>
-                </Menubar.Content>
-            </Menubar.Menu>
-        </Menubar.Root>
+        <img src="/logo.png" alt="Logo">
+        <Menubar />
     </header>
 
     <!-- Main Context -->

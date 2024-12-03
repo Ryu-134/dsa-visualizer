@@ -34,10 +34,11 @@
 <!-- Visualization with User Input -->
 <div class="flex flex-col w-full justify-center gap-8">
     <!-- Visuals: Vector Graphic and C++ Code Representation -->
-    <div class="flex w-full items-start justify-center gap-8">
+    <div class="flex w-full items-start justify-between gap-8">
         <!-- Vector visual representation -->
-        <div class="w-[40%] flex flex-col items-center justify-center">
+        <div class="w-[40%] flex flex-col items-center justify-center gap-12">
             <!-- Rectangle for each slot; x: horiz. pstn of of slot; fill: color rect. if its filled or not -->
+             <h2 class="text-sandy-brown">Vector Visual:</h2>
             <svg class="border border-saffron" width="700" height="210" >
                 <!-- for each possible array index draw rectangle -->
                 {#each Array(capacity) as _, i}
@@ -68,13 +69,15 @@
         </div>
 
         <!-- C++ code representation visuals -->
-        <div class="w-[30%] flex items-center justify-center">
+        <div class="w-[40%] flex flex-col items-center justify-center gap-12">
+            <h2 class="text-sandy-brown">Representative Code:</h2>
+
             <pre><code>{cppCode}</code></pre>
         </div>
     </div>
    
     <!-- User Input: -->
-    <div class="flex flex-row items-center justify-center gap-4">
+    <div class="flex flex-row items-center justify-center gap-4 mt-4">
         <!-- bind:value connects user input to inputValue variable -->
         <input 
             type="text" 
@@ -89,4 +92,3 @@
         </button>
     </div>
 </div>
-

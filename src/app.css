@@ -64,10 +64,15 @@ a {
 
 /* Buttons */
 button {
-    @apply bg-persian-green text-white text-xl font-bold px-4 py-2 m-3 rounded;
+    @apply bg-persian-green text-white text-xl font-bold px-4 py-2 m-2 rounded;
 }
     button:hover {
         @apply bg-burnt-sienna text-charcoal font-black;
+    }
+
+    button::open {
+        @apply bg-burnt-sienna text-charcoal font-black;
+
     }
     .btn-input {
         @apply px-4 py-2 m-3 font-bold ;
@@ -97,27 +102,14 @@ code {
 }
 
 pre {
-    @apply bg-charcoal text-sandy-brown p-2 rounded overflow-x-auto;
+    @apply bg-charcoal text-sandy-brown p-1 rounded overflow-x-auto;
 }
 
-/* Headers and Footers */
 header {
-    @apply text-sandy-brown fixed top-0 left-0 p-1 text-center w-auto bg-charcoal rounded;
+    @apply fixed top-0 left-0 flex items-center h-12 bg-charcoal w-full; 
 }
-    header .menubar-trigger {
-        @apply hover:text-persian-green cursor-pointer px-2 py-2;
-    }
-    header .menubar-content {
-        @apply bg-charcoal text-sandy-brown shadow-lg rounded-lg;
-    }
-    header .menubar-item {
-        @apply hover:bg-persian-green hover:text-saffron px-4 py-2;
-    }
-    header .menubar-separator {
-        @apply bg-saffron h-[1px] w-full my-1;
-    }
-    header .menubar-shortcut {
-        @apply text-burnt-sienna text-sm ml-auto;
+    header img {
+        @apply h-[85%] object-contain m-2;
     }
 
 footer {
@@ -156,32 +148,32 @@ footer {
 /* ShadCn  */
 @layer base {
     :root {
-        /* My custom colors */
-        --background: 197 37% 24%; /* Charcoal */
-        --foreground: 27 87% 67%; /* Sandy-Brown */
+        /* My custom colors for ShadCn components*/
+        --background: 197 37% 24%; /* Charcoal; app base */   
+        --foreground: 27 87% 67%; /* Sandy-Brown; text on base */
 
-        --primary: 173 58% 39%;   /* Persian-Green */
-        --primary-foreground: 0 0% 100%; /* White */
+        --primary: 197 37% 24%;   /* Persian-Green; main action (primary elements)   */
+        --primary-foreground: 0 0% 100%; /* White; text of primary elements */
 
-        --secondary: 43 74% 66%;  /* Saffron */
-        --secondary-foreground: 0 0% 100%; /* White */
+        --secondary: 43 74% 66%;  /* Saffron; secondary action */
+        --secondary-foreground: 0 0% 100%; /* White; text on secondary action */
 
-        --accent: 12 76% 61%;     /* Burnt-Sienna */
-        --accent-foreground: 0 0% 100%; /* White */
+        --accent: 12 76% 61%;     /* Burnt-Sienna; special elements */
+        --accent-foreground: 0 0% 100%; /* White; text on top of accents */
 
-        --muted: 43 74% 66%;      /* Saffron */
-        --muted-foreground: 27 87% 67%; /* Sandy-Brown */
+        --muted: 43 74% 66%;      /* Saffron; disabled elements */
+        --muted-foreground: 27 87% 67%; /* Sandy-Brown; texr on disabled elements */
 
-        --popover: 197 37% 24%;   /* Charcoal */
-        --popover-foreground: 27 87% 67%; /* Sandy-Brown */
+        --popover: 197 37% 24%;   /* Charcoal; for temporary elements that appear when hovering, right click; e.g. drop down */
+        --popover-foreground: 27 87% 67%; /* Sandy-Brown; text in popover */
 
-        --card: 197 37% 24%;      /* Charcoal */
-        --card-foreground: 27 87% 67%; /* Sandy-Brown */
+        --card: 197 37% 24%;      /* Charcoal; for permanent elements;e.g drop down menu */
+        --card-foreground: 27 87% 67%; /* Sandy-Brown; text on drop down */
 
-        --border: 173 58% 39%;    /* Persian-Green */
-        --input: 197 37% 24%;     /* Charcoal */
+        --border: 173 58% 39%;    /* Persian-Green; border color for elements */
+        --input: 197 37% 24%;     /* Charcoal; background for inputs */
 
-        --ring: 173 58% 39%;      /* Persian-Green */
+        --ring: 173 58% 39%;      /* Persian-Green; focus ring for interactive elements */
         --radius: 0.5rem;         /* Default border radius */
         }
         

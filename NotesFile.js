@@ -59,32 +59,59 @@
         // Use app.css for Consistent Styling Across Tags:
             // Benefit: Global styling works even if you introduce new layouts or components.
             // NOTE: to incorporate tailwind utilities into CSS use '@apply' keyword
+            // Best Practices for app.css
+                // Global Defaults:
+                    // Use app.css for resets and themes (e.g., body, html, typography, colors).
+                    // Avoid detailed or component-specific styles.
+
+                    // Utility Classes:
+                        // Create reusable classes (e.g., .btn, .card) for common patterns.
+
+                // Scoped Component Styles:
+                    // Use <style> in .svelte files for component-specific styling to avoid conflicts.
+                    
+                // Use Tailwind Utilities:
+                    // Keep most layout and spacing styles in Tailwind utilities, not app.css.
+
+                // Tags to Style Globally
+                    // body, html: For typography, background, and resets.
+                    // Headings (h1-h6): Consistent hierarchy.
+                    // Links (a): Default text styles.
+                    // Forms (input, textarea, select): Normalize appearance.
+
+                // Tags to Avoid Styling Globally
+                    // button: Use .btn classes instead to prevent conflicts.
+                    // div: Avoid as it’s a generic container.
+                    // span, img: Style only as needed, ideally scoped.
 
         // Use layout.svelte for Reusable Structure:
             // Define a persistent header, footer, or UI element that never changes
 
         // Work Together for Global and Layout Styling:
             // Use app.css for default tag styles.
+                
             // Use layout.svelte to add styles specific to the layout structure.
 
-// BEST PRACTICE: define colors in app.css and create tokens in tailwind.config to those colors so they can be used in tailwind
-    // e.g. 
-        // 1. in app.css: 
-            :root {
-                --background: #264653; 
-            }
-        // 2. in tailwind.config.js:
-            extend: {
-                colors: {
-                    background: 'hsl(var(--background))', // Use --background token
-                }
-            }
-        // 3. Access via tailwind in HTML/componenets:
-            <div class="bg-background">
+        // BEST PRACTICE: define colors in app.css and create tokens in tailwind.config to those colors so they can be used in tailwind
+            // e.g. 
+                // 1. in app.css: 
+                    :root {
+                        --background: #264653; 
+                    }
+                // 2. in tailwind.config.js:
+                    extend: {
+                        colors: {
+                            background: 'hsl(var(--background))', // Use --background token
+                        }
+                    }
+                // 3. Access via tailwind in HTML/componenets:
+                    <div class="bg-background">
 
-// CSS Organization
-    // global styles: app.css
-    // component specific: style in <style> block within the file
+        // CSS Organization
+            // global styles: app.css
+            // global colors: define in app.css -> create token in tailwind.config to use as tailwind calss
+            // component specific: style within component file; NOT app.css
+                // BEST PRACTICE: also place component layout style in main component file
 
 // A five-color palette offers flexibility:
     // Background - Neutral Color
@@ -96,8 +123,17 @@
 
     
 
+
+
 // ***** GENERAL WEB DEV NOTES *******
 
+
+
+// Best Practices: Adjusting Padding vs. Margin (Parent vs. Child)
+    // For uniform layout: Adjust parent padding (menu bar).
+    // For specific sibling spacing: Adjust child margin (triggers).
+    // KEY: Adjust parent -> child for sibling spacing
+    // WARNING: Avoid combining both unless absolutely necessary, as it can lead to unintended spacing issues.
 
 // Web Dev Logic: 
     // 1. Start by Asking: What does this page need to do?
@@ -287,3 +323,8 @@
         // 3 values to tweak directly in code: color (hue), intensity (saturation), and brightness (lightness)
             // NOTE: theres a fourth optional value if needed called Alphavalue (transparency); HSLA
     // Easier for light/dark themes conversion
+
+
+// Wrap-up:
+    // Add favicon
+    // re-enable animations
