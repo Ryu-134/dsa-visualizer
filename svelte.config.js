@@ -18,7 +18,7 @@ const config = {
             fallback: 'index.html'   // 'index.html' if you need single-page app behavior
 		}),
 		paths: {
-			base: '',	// set this if deploying to subdirectory in the future
+			base: '/dsa-visualizer',	// set this if deploying to subdirectory
 		}
 	}
 };
