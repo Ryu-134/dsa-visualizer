@@ -1,7 +1,7 @@
 # TODO List for DSA Visualizer
 
 ## General
-- [ ] Finalize project structure and folder hierarchy.
+- [ ] Look into making website look nicer effectively 
 - [ ] Ensure the entire application uses a Flexbox grid system with media queries.
 
 ---
