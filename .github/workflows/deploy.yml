@@ -2,8 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: main
-
+    branches: 
+      - main
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'svelte.config.js'
+      - '.github/workflows/deploy.yml'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,11 +29,22 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Install fallback @types/cookie
+        if: failure()
+        run: npm install @types/cookie@0.4.1 --save-dev || echo "Skipping @types/cookie"
+
+      - name: Clean build directory
+        run: rm -rf build
+      
       - name: Build the site
         env:
           BASE_PATH: '/dsa-visualizer'
+          NODE_ENV: production
         run: npm run build
 
+      - name: Verify build output
+        run: test -d build || (echo "Build directory missing" && exit 1)
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
