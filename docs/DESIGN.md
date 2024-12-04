@@ -1,5 +1,6 @@
 # DSA Visualizer Design Document
-
+WARNING: ensure '@types/cookie' are deleted; still being installed upon sveltekit@latest install for unknown reason.
+ 
 ## Project Objectives
 
 Goal: to create a web-based application that visualizes the internal workings of various data structures and algorithms (DSA). The project will include:
