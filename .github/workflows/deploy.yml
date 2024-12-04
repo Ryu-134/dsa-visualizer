@@ -29,10 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Install fallback @types/cookie
-        if: failure()
-        run: npm install @types/cookie@0.4.1 --save-dev || echo "Skipping @types/cookie"
-
       - name: Clean build directory
         run: rm -rf build
       
