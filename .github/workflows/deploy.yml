@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
@@ -19,9 +22,11 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build the site
+        env:
+          BASE_PATH: '/dsa-visualizer'
         run: npm run build
 
       - name: Deploy to GitHub Pages
