@@ -23,13 +23,13 @@
 >
 	<!-- Menubar layout structure, maybe move to layout.svelte later?  -->
     <MenubarPrimitive.Menu>
-        <MenubarTrigger on:click={() => goto('/')}>Home</MenubarTrigger>
+        <MenubarTrigger on:click={() => goto('/dsa-visualizer')}>Home</MenubarTrigger>
     </MenubarPrimitive.Menu>
 
     <MenubarPrimitive.Menu>
 		<MenubarTrigger>Data Structure</MenubarTrigger>
 			<MenubarContent>
-				<MenubarItem on:click={() => goto('/vector')}>Vector</MenubarItem>
+				<MenubarItem on:click={() => goto('/dsa-visualizer/vector')}>Vector</MenubarItem>
                     <MenubarSeparator />
 			</MenubarContent>
         </MenubarPrimitive.Menu>
