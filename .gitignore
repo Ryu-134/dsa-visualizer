@@ -30,10 +30,6 @@ vite.config.ts.timestamp-*
 .vite/
 *.cache
 
-# Tailwind
-postcss.config.cjs
-tailwind.config.js
-
 # IDE/editor files
 .vscode/
 .idea/
