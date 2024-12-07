@@ -8,7 +8,7 @@
 
     <!-- Header -->
     <header>
-        <img src="/dsa-visualizer/logo.png" alt="Logo">
+        <img src="/logo.png" alt="Logo">
         <Menubar />
     </header>
 

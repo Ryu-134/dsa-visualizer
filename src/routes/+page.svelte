@@ -9,7 +9,7 @@
 
     <ul class="mt-5">
         <div class="inline-block mx-2">
-        <li><button on:click={() => goto('/dsa-visualizer/vector')}>Vector</button></li>
+        <li><button on:click={() => goto('/vector')}>Vector</button></li>
     </ul>
 </div>
 
