@@ -1,7 +1,5 @@
 # DSA Visualizer
 ---
-[![Deploy to GitHub Pages](https://github.com/Ryu-134/dsa-visualizer/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ryu-134/dsa-visualizer/actions/workflows/deploy.yml)
----
 **DSA Visualizer** is an educational tool designed to visualize data structures and algorithms. Built using **SvelteKit** and **Tailwind CSS**, it provides an interactive and intuitive platform to explore and understand fundamental concepts in computer science.
 
 This project was developed as part of my journey as a Computer Science student, driven by my desire to deepen my understanding of data structures and algorithms while honing my web development skills. 
