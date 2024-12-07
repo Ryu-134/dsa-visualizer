@@ -1,6 +1,7 @@
 <script>
+    import Menubar from "$lib/components/ui/menubar/menubar.svelte"; // Import Menubar   
     import '../app.css';    // import global styles
-    import Menubar from "$lib/components/ui/menubar/menubar.svelte"; // Import Menubar
+
 </script>
   
 <!-- General page layout -->
